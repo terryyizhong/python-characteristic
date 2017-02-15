@@ -1,0 +1,79 @@
+1.1 Inverting a dictionary using zip
+
+>>> m = {'a': 1, 'b': 2, 'c': 3, 'd': 4}
+>>> m.items()
+[('a', 1), ('c', 3), ('b', 2), ('d', 4)]
+>>> zip(m.values(), m.keys())
+[(1, 'a'), (3, 'c'), (2, 'b'), (4, 'd')]
+>>> mi = dict(zip(m.values(), m.keys()))
+>>> mi
+{1: 'a', 2: 'b', 3: 'c', 4: 'd'}
+
+1.2   Inverting a dictionary using a dictionary comprehension
+
+>>> m = {'a': 1, 'b': 2, 'c': 3, 'd': 4}
+>>> m
+{'d': 4, 'a': 1, 'b': 2, 'c': 3}
+>>> {v: k for k, v in m.items()}
+{1: 'a', 2: 'b', 3: 'c', 4: 'd'}
+
+1.3   Dictionary comprehensions
+
+>>> m = {x: x ** 2 for x in range(5)}
+>>> m
+{0: 0, 1: 1, 2: 4, 3: 9, 4: 16}
+
+>>> m = {x: 'A' + str(x) for x in range(10)}
+>>> m
+{0: 'A0', 1: 'A1', 2: 'A2', 3: 'A3', 4: 'A4', 5: 'A5', 6: 'A6', 7: 'A7', 8: 'A8', 9: 'A9'}
+
+
+2.1   Sets and set operations
+
+>>> A = {1, 2, 3, 3}
+>>> A
+set([1, 2, 3])
+>>> B = {3, 4, 5, 6, 7}
+>>> B
+set([3, 4, 5, 6, 7])
+>>> A | B
+set([1, 2, 3, 4, 5, 6, 7])
+>>> A & B
+set([3])
+>>> A - B
+set([1, 2])
+>>> B - A
+set([4, 5, 6, 7])
+>>> A ^ B
+set([1, 2, 4, 5, 6, 7])
+>>> (A ^ B) == ((A - B) | (B - A))
+True
+
+2.2   Multisets and multiset operations (collections.Counter)
+
+>>> A = collections.Counter([1, 2, 2])
+>>> B = collections.Counter([2, 2, 3])
+>>> A
+Counter({2: 2, 1: 1})
+>>> B
+Counter({2: 2, 3: 1})
+>>> A | B
+Counter({2: 2, 1: 1, 3: 1})
+>>> A & B
+Counter({2: 2})
+>>> A + B
+Counter({2: 4, 1: 1, 3: 1})
+>>> A - B
+Counter({1: 1})
+>>> B - A
+Counter({3: 1})
+
+2.3  Most common elements in an iterable (collections.Counter)
+
+>>> A = collections.Counter([1, 1, 2, 2, 3, 3, 3, 3, 4, 5, 6, 7])
+>>> A
+Counter({3: 4, 1: 2, 2: 2, 4: 1, 5: 1, 6: 1, 7: 1})
+>>> A.most_common(1)
+[(3, 4)]
+>>> A.most_common(3)
+[(3, 4), (1, 2), (2, 2)]
