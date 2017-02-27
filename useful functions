@@ -9,10 +9,6 @@ Return an enumerate object. sequence must be a sequence, an iterator, or some ot
 [(1, 'Spring'), (2, 'Summer'), (3, 'Fall'), (4, 'Winter')]
 
 
-######yield and generator
-http://stackoverflow.com/questions/231767/what-does-the-yield-keyword-do-in-python
-
-
 #.format()
 Something that the modulo operator ( % ) can't do, afaik:
 
