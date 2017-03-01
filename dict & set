@@ -1,3 +1,6 @@
+1.0
+dic.get('key') the key can not in the dic, and return nothing. but use dic['key'] if the key not in dic, cause error
+
 1.1 Inverting a dictionary using zip
 
 >>> m = {'a': 1, 'b': 2, 'c': 3, 'd': 4}
