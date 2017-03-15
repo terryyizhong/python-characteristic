@@ -1,0 +1,22 @@
+1 # 例：类的继承 Python编程中类可以承继父类属性，形式为class 类名（父类），子类可以继承父类的所有方法和属性，也可以重载父类的成员函数及属性，须注意的是子类成员函数若重载父类（即名字相同），则会使用子类成员函数
+ 2 class CAnimal:
+ 3     def __init__(self,voice='hello'): # voice初始化默认为hello
+ 4         self.voice = voice
+ 5     def Say(self):
+ 6         print self.voice
+ 7     def Run(self):
+ 8         pass    # 空操作语句（不做任何操作）
+ 9 
+10 class CDog(CAnimal):        # 继承类CAnimal
+11     def SetVoice(self,voice): # 子类增加函数SetVoice
+12         self.voice = voice
+13     def Run(self,voice): # 子类重载函数Run
+14         print 'Running'
+15 
+16 bobo = CDog()
+17 bobo.SetVoice('My Name is BoBo!')      # 设置child.data为hello
+18 bobo.Say()
+19 bobo.Run()
+20 
+21 >> My Name is BoBo!
+22 >> Running
